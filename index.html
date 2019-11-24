@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Latest minified bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <!-- Latest minified bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/logo3r.png" type="image/png">
+    <title>As We Travel</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="vendors/popup/magnific-popup.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://kit.fontawesome.com/e600d1947b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!--================Header Menu Area =================-->
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="index.html"><img src="img/logo3r.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <div class="row align-items-end">
+                                <li class="nav-item active"><a data-toggle="modal" data-target="#modalForm"
+                                        class="nav-link" href="#">Iniciar sesión</a></li>
+                                <li class="nav-item active"><a class="nav-link" href="#">Registrarse</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================Header Menu Area =================-->
+
+    <!--================ Área de formulario consulta de vuelos =================-->
+    <section class="home_banner_area">
+        <div class="box_1620">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="container banner_content">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-2">
+                                <label>Ciudad Origen</label>
+                                <input type="text" name="ciudadOrigen" class="form-control">
+                            </div>
+                            <div class="form-group col-2">
+                                <label>Ciudad Destino</label>
+                                <input type="text" name="ciudadDestino" class="form-control">
+                            </div>
+                            <div class="form-group col-2">
+                                <label>Fecha Salida</label>
+                                <input type="date" name="fechaSalida" class="form-control">
+                            </div>
+                            <div class="form-group col-2">
+                                <label>Fecha Llegada</label>
+                                <input type="date" name="fechaLlegada" class="form-control">
+                            </div>
+                            <div class="form-group col-2">
+                                <label>Categoría Asiento</label>
+                                <select class="custom-select form-control">
+                                    <option selected>Seleccione una categoria</option>
+                                    <option value="1">Económico</option>
+                                    <option value="2">Ejecutivo</option>
+                                    <option value="3">Primera clase</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label>Pasajeros</label>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-auto">
+                                <select class="custom-select form-control">
+                                    <option selected>Adultos (+12 años)</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                            <div class="col-auto">
+                                <select class="custom-select form-control">
+                                    <option selected>Niños (menos de 12 años)</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                            <div class="col-auto">
+                                <select class="custom-select form-control">
+                                    <option selected>Infantes (menos de 2 años)</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row justify-content-center">
+                            <input type="button" class="main_btn" value="Buscar Vuelos">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ Área de formulario consulta de vuelos =================-->
+
+    <!--================Home Blog Area =================-->
+    <section class="home_blog_inner">
+        <div class="container banner_content">
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <h5>Avianca</h5>
+                </div>
+                <div class="col-2">
+                    <div class="row">
+                        <h3>5:00</h3>
+                    </div>
+                    <div class="row">
+                        <p>BOG</p>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <span class="fas fa-plane-departure fa-lg"></span>
+                </div>
+                <div class="col-2">
+                    <div class="row">
+                        <h3>10:00</h3>
+                    </div>
+                    <div class="row">
+                        <p>MEX</p>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <button class="consulta_btn">Reservar</button>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-3">
+                    <h5>Avianca</h5>
+                </div>
+                <div class="col-2">
+                    <div class="row">
+                        <h3>14:00</h3>
+                    </div>
+                    <div class="row">
+                        <p>MEX</p>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <i class="fas fa-plane-arrival fa-lg"></i>
+                </div>
+                <div class="col-2">
+                    <div class="row">
+                        <h3>20:00</h3>
+                    </div>
+                    <div class="row">
+                        <p>BOG</p>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <button class="consulta_btn">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Home Blog Area =================-->
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalForm" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <form method="post" action="validarLogin.php">
+                        <section class="blog_area single-post-area p_0">
+                            <div class="comment-form">
+                                <h1>Inicio de sesión</h1>
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <center>
+                                        <div class="form-group col-lg-8 col-md-0 name">
+                                            <section class="sample-text-area">
+                                                <p class="col-md-10 mt-sm-20 "> <b>Correo</b> </p>
+                                            </section>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <div class="form-group col-lg-10 col-md-2 email">
+                                        <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su correo electrónico" required="true">
+                                    </div>
+                                </div>
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <center>
+                                        <div class="form-group col-lg-8 col-md-0 name">
+                                            <section class="sample-text-area">
+                                                <p class="col-md-10 mt-sm-20 "> <b>Contraseña</b> </p>
+                                            </section>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <div class="form-group col-lg-10 col-md-0 email">
+                                        <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Ingrese su contraseña" required="true">
+                                    </div>
+                                </div>
+
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <div class="button-group-area mt-20">
+                                        <input type="submit" class="genric-btn warning-border circle" name="Ingresar">
+                                    </div>
+                                    <div class="button-group-area mt-15">
+                                        <a href="#">Olvide mi contraseña</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                    </form>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="vendors/isotope/isotope.pkgd.min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendors/counter-up/jquery.counterup.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>

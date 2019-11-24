@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<script type="text/javascript">
+    function chkcontrol(j) {
+        var total = 0;
+        for (var i = 0; i < document.getElementsByName("asiento[]").length; i++) {
+            if (document.getElementsByName("asiento[]")[i].checked) {
+                total = total + 1;
+            }
+            if (total > 3) {
+                alert("Solo puede seleccionar tantos asientos (3)")
+                document.getElementsByName("asiento[]")[j].checked = false;
+                return false;
+            }
+        }
+    }
+
+    function habilitar(valor) {
+        if (valor == true) {
+            document.getElementById("titular").disabled = false;
+            document.getElementById("numero").disabled = false;
+            document.getElementById("cvv").disabled = false;
+        } else if (valor == false) {
+            document.getElementById("titular").disabled = true;
+            document.getElementById("numero").disabled = true;
+            document.getElementById("cvv").disabled = true;
+        }
+    }
+
+</script>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/logo3r.png" type="image/png">
+    <title>AsWeTravel.com</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../vendors/linericon/style.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="../vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="../vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="../vendors/popup/magnific-popup.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!--================Header Menu Area =================-->
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <a class="navbar-brand logo_h" href="../index.html"><img src="../img/logo3r.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item submenu dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Nombre</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="../misDatos.php">Mi información</a>
+                                    <li class="nav-item"><a class="nav-link" href="#">Compras y reservas</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Historial de compras</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Historial de reservas</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item active"><a class="nav-link" href="#">Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================Header Menu Area =================-->
+
+    <!-- datos usuario sin registro-->
+
+    <section class="blog_area single-post-area p_120">
+        <form id="world" name="world" action="#">
+            <div class="container">
+                <div class="section-top-border">
+                    <div class="row">
+
+                        <!--  Formulario infromación vuelo y selección de asientos    -->
+
+                        <div class="col-lg-12 col-md-0">
+                            <div class="comment-form">
+                                <h1>Información cliente</h1>
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <center>
+                                        <div class="form-group col-lg-8 col-md-0 name">
+                                            <section class="sample-text-area">
+                                                <p class="col-md-10 mt-sm-20 "> <b>Nombre</b> </p>
+                                            </section>
+                                        </div>
+                                    </center>
+                                    <div class="form-group col-lg-10 col-md-2 email">
+                                        <input type="name" class="form-control" id="nombre" name="nombre"
+                                        placeholder="Ingrese su nombre"
+                                        onfocus="this.placeholder = 'Campo requerido'"
+                                        onblur="this.placeholder = 'Ingrese su nombre'" required="true">
+                                    </div>
+                                </div>
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <center>
+                                        <div class="form-group col-lg-8 col-md-0 name">
+                                            <section class="sample-text-area">
+                                                <p class="col-md-10 mt-sm-20 "> <b>Cargo</b> </p>
+                                            </section>
+                                        </div>
+                                    </center>
+                                    <div class="form-group col-lg-9 col-md-0 name">
+                                            <div class="input-group-icon mt-10">
+                                                <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+                                                <div class="form-select" id="default-select">
+                                                    <select name="cargo" id="cargo">
+                                                        <option value="1">Estudiante</option>
+                                                        <option value="1">Empleado</option>
+                                                        <option value="1">Independiente</option>
+                                                        <option value="1">Pensionado</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <center>
+                                        <div class="form-group col-lg-8 col-md-0 name">
+                                            <section class="sample-text-area">
+                                                <p class="col-md-10 mt-sm-20 "> <b>Correo</b> </p>
+                                            </section>
+                                        </div>
+                                    </center>
+                                    <div class="form-group col-lg-10 col-md-0 email">
+                                        <input type="email" class="form-control" id="correo" name="correo"
+                                        placeholder="Ingrese su correo"
+                                        onfocus="this.placeholder = 'Campo requerido'"
+                                        onblur="this.placeholder = 'Ingrese su correo'" required="true">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Fin datos usuario sin registro -->
+
+            <!--================Compra Area =================-->
+
+            <div class="container">
+                <div class="section-top-border">
+                    <div class="row">
+
+                        <!--  Formulario infromación vuelo y selección de asientos    -->
+
+                        <div class="col-lg-8 col-md-8">
+                            <div class="comment-form">
+                                <h1>Comprar tiquete</h1>
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <center>
+                                        <div class="form-group col-lg-10 col-md-0 name">
+                                            <section class="sample-text-area">
+                                                <p class="col-md-10 mt-sm-20 "> <b>Precio</b> </p>
+                                            </section>
+                                        </div>
+                                    </center>
+                                    <div class="form-group col-lg-4 col-md-2 email">
+                                        <input type="email" disabled="true" class="form-control" id="email"
+                                            placeholder="$ 2.300.000">
+                                    </div>
+                                    <center>
+                                        <div class="form-group col-lg-10 col-md-0 name">
+                                            <section class="sample-text-area">
+                                                <p class="col-md-10 mt-sm-20 "> <b>Fecha</b> </p>
+                                            </section>
+                                        </div>
+                                    </center>
+                                    <div class="form-group col-lg-4 col-md-0 email">
+                                        <input type="email" disabled="true" class="form-control" id="email"
+                                            placeholder="20/11/2019">
+                                    </div>
+                                </div>
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <center>
+                                        <div class="form-group col-lg-16 col-md-0 name">
+                                            <section class="sample-text-area">
+                                                <p class="col-md-10 mt-sm-20 "> <b>Aerolínea</b> </p>
+                                            </section>
+                                        </div>
+                                    </center>
+                                    <div class="form-group col-lg-4 col-md-0 email">
+                                        <input type="email" disabled="true" class="form-control" id="email"
+                                            placeholder="LAN">
+                                    </div>
+                                    <center>
+                                        <div class="form-group col-lg-10 col-md-0 name">
+                                            <section class="sample-text-area">
+                                                <p class="col-md-10 mt-sm-20 "> <b>Ciudad</b> </p>
+                                            </section>
+                                        </div>
+                                    </center>
+                                    <div class="form-group col-lg-4 col-md-0 email">
+                                        <input type="email" disabled="true" class="form-control" id="email"
+                                            placeholder="Madrid">
+                                    </div>
+                                </div>
+
+                                <div class="br"></div>
+
+                                <br>
+
+                                <!-- Imagen del mapa del avión -->
+
+                                <div class="col-md-15">
+                                    <img src="../img/elements/mapaAvion.PNG" alt="" class="img-fluid">
+                                </div>
+
+
+                                <br>
+                                <br>
+
+                                <!-- Check de asientos en lista -->
+                                <!-- if dependiendo de la clase dos for para que baje de fila -->
+                                <center>
+                                    <div id="cant">
+                                        <div class="switch-wrap d-flex justify-content-between">
+                                            <p>F06</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" name="asiento[]" value="F06"
+                                                    onclick='chkcontrol(0)' id="default-checkbox1">
+                                                <label for="default-checkbox1"></label>
+                                            </div>
+                                            <p>E06</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" name="asiento[]" id="default-checkbox2"
+                                                    onclick='chkcontrol(0)'>
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>D06</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" name="asiento[]" id="default-checkbox3"
+                                                    onclick='chkcontrol(1)'>
+                                                <label for="default-checkbox3"></label>
+                                            </div>
+                                            <p>C06</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" name="asiento[]" id="default-checkbox4"
+                                                    onclick='chkcontrol(2)'>
+                                                <label for="default-checkbox4"></label>
+                                            </div>
+                                            <p>B06</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" name="asiento[]" id="default-checkbox5"
+                                                    onclick='chkcontrol(3)'>
+                                                <label for="default-checkbox5"></label>
+                                            </div>
+                                            <p>A06</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>F07</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>E07</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>D07</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>C07</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>B07</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>A07</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                        </div>
+                                        <div class="switch-wrap d-flex justify-content-between">
+                                            <p>F08</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>E08</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>D08</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>C08</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>B08</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>A08</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>F09</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>E09</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>D09</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>C09</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>B09</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                            <p>A09</p>
+                                            <div class="primary-checkbox">
+                                                <input type="checkbox" id="default-checkbox2">
+                                                <label for="default-checkbox2"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </center>
+
+                                <div class="br"></div>
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <div class="button-group-area mt-10">
+                                        <a href="#" class="genric-btn warning-border circle">Regresar</a>
+                                    </div>
+                                    <div class="button-group-area mt-10">
+                                            <button type="submit" class="genric-btn danger circle" aria-label> Comprar
+                                            </button>
+                                        </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--  Sección derecha datos de la tarjeta    -->
+
+                        <div class="col-lg-4 ">
+                            <div class="blog_right_sidebar">
+                                <div class="switch-wrap d-flex justify-content-between">
+                                    <h3>Tarjeta de crédito</h3>
+                                </div>
+
+                                <div class="br"></div>
+
+                                <aside name="todo" class="single_sidebar_widget author_widget">
+                                    <h4 class="mb-20 title_color">Titular</h4>
+                                    <input type="name" name="titular" class="form-control" id="titular" name="titular"
+                                        placeholder="Ingrese el nombre del titular"
+                                        onfocus="this.placeholder = 'Campo requerido'"
+                                        onblur="this.placeholder = 'Ingrese el nombre del titular'" required="true">
+                                    <h4 class="mb-20 title_color">Número</h4>
+                                    <input type="number" name="numero" class="form-control" id="numero" name="numero"
+                                        placeholder="Ingrese el número de cuenta"
+                                        onfocus="this.placeholder = 'Campo requerido'"
+                                        onblur="this.placeholder = 'Ingrese el número de cuenta'" required="true">
+                                    <h4 class="mb-20 title_color">Cvv</h4>
+                                    <input type="name" name="cvv" class="form-control" id="cvv" name="cvv"
+                                        placeholder="Ingrese el CVV de la tarjeta"
+                                        onfocus="this.placeholder = 'Campo requerido'"
+                                        onblur="this.placeholder = 'Ingrese el CVV de la tarjeta'">
+                                </aside>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!--================Blog Area =================-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="vendors/isotope/isotope.pkgd.min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendors/counter-up/jquery.counterup.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
